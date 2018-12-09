@@ -33,11 +33,11 @@ function onReady() {
     newToDoText.value = '';
 
     //designate checked boxes
-    let checked = checkbox.checked;
+    let check= checkbox.checked;
   });
 
   deleteToDo.addEventListener ("click", function() {
-    checked.remove()
+    removeChild(check)
   }
 );
 
