@@ -32,9 +32,14 @@ function onReady() {
     //empty the input
     newToDoText.value = '';
 
+    //designate checked boxes
+    let checked = checkbox.checked;
   });
 
-  
+  deleteToDo.addEventListener ("click", function() {
+    checked.remove()
+  }
+);
 
 }
 
