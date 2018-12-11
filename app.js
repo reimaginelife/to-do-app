@@ -5,16 +5,13 @@ function onReady() {
   const newToDoText = document.getElementById('newToDoText')
   const toDoList = document.getElementById('toDoList')
   const deleteToDo = document.getElementById('deleteToDo')
+
+
   addToDoForm.addEventListener('submit', event => {
     event.preventDefault();
 
     //get the newToDoText
     let title = newToDoText.value;
-
-    //create array to collect input
-
-//    toDos.push(title);
-//    console.log(toDos);
 
 
     //create a new li
@@ -30,6 +27,7 @@ function onReady() {
     let deleteToDo = document.createElement('button')
 
     deleteToDo.textContent = "Delete";
+    deleteToDo.className = 'mdl-button mdl-js-button mdl-js-ripple-effect';
 
     //set the input's type to checkbox
     checkbox.type = "checkbox";
