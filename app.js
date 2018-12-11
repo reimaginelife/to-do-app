@@ -1,14 +1,21 @@
 function onReady() {
+  let toDos = [];
+
   const addToDoForm = document.getElementById('addToDoForm')
   const newToDoText = document.getElementById('newToDoText')
   const toDoList = document.getElementById('toDoList')
   const deleteToDo = document.getElementById('deleteToDo')
-
   addToDoForm.addEventListener('submit', event => {
     event.preventDefault();
 
     //get the newToDoText
     let title = newToDoText.value;
+
+    //create array to collect input
+
+//    toDos.push(title);
+//    console.log(toDos);
+
 
     //create a new li
     let newLi = document.createElement('li');
@@ -16,6 +23,13 @@ function onReady() {
     //create a new input
     let checkbox = document.createElement('input')
 
+
+
+
+    //delete button
+    let deleteToDo = document.createElement('button')
+
+    deleteToDo.textContent = "Delete";
 
     //set the input's type to checkbox
     checkbox.type = "checkbox";
@@ -29,17 +43,20 @@ function onReady() {
     //attach the li to the ul
     toDoList.appendChild(newLi);
 
+    //attach delete button to item
+    newLi.appendChild(deleteToDo)
+
     //empty the input
     newToDoText.value = '';
 
-    //designate checked boxes
-    let check= checkbox.checked;
+    deleteToDo.addEventListener('click', function(event) {
+      toDoList.removeChild(this.parentElement);
+    })
+
+
   });
 
-  deleteToDo.addEventListener ("click", function() {
-    removeChild(check)
-  }
-);
+
 
 }
 
